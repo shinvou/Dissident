@@ -1,0 +1,9 @@
+Package: com.shinvou.dissident
+Name: Dissident
+Depends: mobilesubstrate, applist
+Version: 1.3
+Architecture: iphoneos-arm
+Description: True background management and much more.
+Maintainer: Timm Kandziora
+Author: Timm Kandziora
+Section: Tweaks
