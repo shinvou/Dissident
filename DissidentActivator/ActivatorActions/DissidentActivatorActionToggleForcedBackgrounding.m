@@ -23,17 +23,17 @@
     NSString *identifier = [((SpringBoard *)[UIApplication sharedApplication])._accessibilityFrontMostApplication bundleIdentifier];
     int backgroundMode = [[objc_getClass("DissidentSM") sharedInstance] backgroundModeForIdentifier:identifier];
 
-    backgroundMode = (backgroundMode == 2) ? 1 : 2;
+    backgroundMode = (backgroundMode == 4) ? 2 : 4;
 
     [[objc_getClass("DissidentSM") sharedInstance] setBackgroundMode:backgroundMode forIdentifier:identifier];
 
-    if (backgroundMode == 2) {
+    if (backgroundMode == 4) {
       [[objc_getClass("DissidentHelper") sharedInstance] refreshBackgroundingEnabled:YES forIdentifier:identifier];
 
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Dissident" message:@"Foregrounding enabled." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
       [alert show];
     } else {
-      [[objc_getClass("DissidentHelper") sharedInstance] stopBackgroundingForIdentifier:identifier];
+      [[objc_getClass("DissidentHelper") sharedInstance] refreshBackgroundingEnabled:YES forIdentifier:identifier];
 
       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Dissident" message:@"Foregrounding disabled." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
       [alert show];
