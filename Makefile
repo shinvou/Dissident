@@ -4,7 +4,7 @@ THEOS_PACKAGE_DIR_NAME = deb
 
 GO_EASY_ON_ME = 1
 
-ARCHS = armv7 arm64
+ARCHS = armv7 arm64 arm64e
 TARGET = iphone:clang:latest:8.0
 
 include theos/makefiles/common.mk
